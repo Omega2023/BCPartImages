@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSet1 xmlns="http://www.tempuri.org/DataSet1.xsd">
+<OMEGADB>
+
+<!-- OMEGA Label Print Application Initializations -->
+    <AppVersion>1.0.0.4</AppVersion>
+
+<!-- Database credentials, either will allow connection to both -->
+    <SQLConnNAV>Data Source=OMEGASQL1;Initial Catalog=Omega-NAV-2009-A;User Id=BCPartImages;Password=puL8J1rRcmMQudwZ;Integrated Security=False;</SQLConnNAV>
+    <SQLConnSOLO>Data Source=OMEGASQL1;Initial Catalog=solochain;Integrated Security=True</SQLConnSOLO>
+    <SQLConnBC>Data Source=OMEGABCDATA;Initial Catalog=Omega_BC18_PROD;User Id=USERID;Password=PASSWORD;Integrated Security=False;Connection Timeout=60;</SQLConnBC>
+
+<!-- SQL Time Out Setting (seconds) -->
+    <SQLTimeout>120</SQLTimeout>
+
+<!-- Base SQL -->
+  <BaseSQL>\\OmegaFS2\Apps\BCPartImages\BCPartImages.sql</BaseSQL>
+
+<!-- Label Spec files -->
+    <ImagesDir>\\OmegaFS2\Apps\BCPartImages</ImagesDir>
+
+</OMEGADB>
+</DataSet1>
+
+<!-- puL8J1rRcmMQudwZ -->
