@@ -3,7 +3,7 @@
 <OMEGADB>
 
 <!-- OMEGA Label Print Application Initializations -->
-    <AppVersion>1.0.0.4</AppVersion>
+    <AppVersion>2.0.0.0</AppVersion>
 
 <!-- Database credentials, either will allow connection to both -->
     <SQLConnNAV>Data Source=OMEGASQL1;Initial Catalog=Omega-NAV-2009-A;User Id=BCPartImages;Password=puL8J1rRcmMQudwZ;Integrated Security=False;</SQLConnNAV>
@@ -14,10 +14,10 @@
     <SQLTimeout>120</SQLTimeout>
 
 <!-- Base SQL -->
-  <BaseSQL>\\OmegaFS2\Apps\BCPartImages\BCPartImages.sql</BaseSQL>
+  <BaseSQL>\\OmegaFS2\Apps\PartImages\BCPartImages.sql</BaseSQL>
 
 <!-- Label Spec files -->
-    <ImagesDir>\\OmegaFS2\Apps\BCPartImages</ImagesDir>
+    <ImagesDir>\\OmegaFS2\Apps\PartImages</ImagesDir>
 
 </OMEGADB>
 </DataSet1>
