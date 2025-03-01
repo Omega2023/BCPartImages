@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -390,10 +391,10 @@ namespace BCPartImages
 
             //Replace Part Number in Template SQL with the one the operator entered
             String sTemp = BaseSQL;
-            Int32 num = sTemp.IndexOf("A.[ProductNo] = '");
+            Int32 num = sTemp.IndexOf("@PickTicket = '");
             if (num > 0)
             { //found String
-                String strTmp = "A.[ProductNo] = '";
+                String strTmp = "@PickTicket = '";
                 num += strTmp.Length;
                 Int32 m = sTemp.IndexOf("'", num);
                 sTemp = sTemp.Substring(num, m - num);
@@ -575,7 +576,7 @@ namespace BCPartImages
                         for (row = 0; row < MaxRow; row++)
                         {
                             dr = m_dsWork.Tables[0].Rows[row];
-                            upperItemArray = Convert.ToString(dr.ItemArray[0]).ToUpper();
+                            upperItemArray = Convert.ToString(dr.ItemArray[1]).ToUpper();
                             if (upperTextBox.Equals(upperItemArray))
                             {
                                 value = Convert.ToString(dr["Path"]);
