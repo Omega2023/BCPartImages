@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using System.Xml;
+using static DotNetOpenAuth.OpenId.Extensions.AttributeExchange.WellKnownAttributes.Contact;
 
 //using System.Deployment;
 //using System.Net;
@@ -38,6 +40,7 @@ namespace BCPartImages
         //Omega_Images.XML file initializations
         String AppVersion = "1.0.0.0";
 
+        String Customer = "";
         string BaseSQL = String.Empty; //SQL command that gets data to fill the m_dsWork DataSet
         string BaseSQLFile = String.Empty;
         string daConnNAV = String.Empty;
@@ -48,6 +51,7 @@ namespace BCPartImages
 
         public struct headerStruct
         {
+            public static int MstrItem = 0;
             public static int ProductNo = 1;
             public static int Path = 2;
             public static int Images = 12;
@@ -460,8 +464,194 @@ namespace BCPartImages
                 LogEvent("Refresh DataSet - Dataset Has Errors");
                 return false;
             }
-
         }
+
+        private bool GetImage(Int32 row)
+        {
+            String fn = "";
+            DataRow dr = m_dsWork.Tables[0].Rows[row];
+            String sTmp = Convert.ToString(dr["Item"]);;
+            String MstrPartNum = Convert.ToString(dr["MasterItem"]);;
+            String sTmpImg = Convert.ToString(dr["Path"]);;
+
+            sTmp = Convert.ToString(dr["Item"]).Trim().ToUpper();
+            LogEvent("Get Image sTmp " + sTmp);
+            MstrPartNum = Convert.ToString(dr["MasterItem"]);;
+            if (MstrPartNum.Equals(String.Empty))
+            {
+                if (!sTmp.Equals(String.Empty))
+                {
+                    MstrPartNum = sTmp;
+                } //End If
+            } //End If
+            LogEvent("Get Image MstrPartNum=" + MstrPartNum);
+            if (sTmp.Contains("P96") || sTmp.Contains("RDK") || sTmp.Contains("BK") || sTmp.Contains("78-") ||
+               Customer.Equals("SENSOR") ||
+               MstrPartNum.Contains("K10") || MstrPartNum.Contains("K14") || MstrPartNum.Contains("H12") ||
+               MstrPartNum.Contains("A10") || MstrPartNum.Contains("A12") || MstrPartNum.Contains("E10"))
+            {
+                sTmpImg = Convert.ToString(dr["Path"]).ToUpper();
+                LogEvent("Get Image sTmpImg=" + sTmpImg);
+                if (sTmp.Contains("P96") || MstrPartNum.Contains("K10"))
+                {
+                    if (sTmpImg.Equals(String.Empty))
+                    {
+                        if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                        }
+                        else
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\P96-Compressor Kit Photos\\" + sTmp + ".jpg";
+                        } //End If
+                        if (!File.Exists(fn))
+                        {
+                            fn = fn.Replace(".jpg", ".gif");
+                            if (!File.Exists(fn))
+                            {
+                                fn = fn.Replace(".gif", "-1.jpg");
+                            if (!File.Exists(fn))
+                                {
+                                    fn = fn.Replace("-1.jpg", "A.jpg");
+                                if (!File.Exists(fn))
+                                    {
+                                        LogEvent("Get Image fn " + fn + " Not Found");
+                                } //End If
+                                } //End If
+                            } //End If
+                        } //End If
+                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
+                        dr["Image"] = fn;
+                    } //End If
+                    } else if (sTmp.Contains("RDK") || MstrPartNum.Contains("K14"))
+                {
+                        if (sTmpImg.Equals(String.Empty))
+                        {
+                            if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                            {
+                                fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                        }
+                        else
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\RDK\\" + sTmp + ".jpg";
+                            } //End If
+                            if (!File.Exists(fn))
+                        {
+                            fn = fn.Replace(".jpg", ".gif");
+                                if (!File.Exists(fn))
+                            {
+                                fn = fn.Replace(".gif", "-1.jpg");
+                            if (!File.Exists(fn))
+                                {
+                                    fn = fn.Replace("-1.jpg", "A.jpg");
+                                if (!File.Exists(fn))
+                                    {
+                                        LogEvent("Get Image fn " + fn + " Not Found");
+                                } //End If
+                                    } //End If
+                                } //End If
+                            } //End If
+                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
+                        dr["Image"] = fn;
+                        } //End If
+                        } else if (sTmp.Contains("BK") && sTmp.Substring(0, 2).Equals("BK") || MstrPartNum.Contains("H12"))
+                {
+                            if (sTmpImg.Equals(String.Empty))
+                            {
+                                if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                                {
+                                    fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                        }
+                        else
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\BMK\\" + sTmp + ".jpg";
+                                } //End If
+                                if (!File.Exists(fn))
+                        {
+                                    fn = fn.Replace(".jpg", ".gif");
+                                    if (!File.Exists(fn))
+                            {
+                                fn = fn.Replace(".gif", "-1.jpg");
+                            if (!File.Exists(fn))
+                                {
+                                    fn = fn.Replace("-1.jpg", "A.jpg");
+                                if (!File.Exists(fn))
+                                    {
+                                        LogEvent("Get Image fn " + fn + " Not Found");
+                                } //End If
+                                        } //End If
+                                    } //End If
+                                } //End If
+                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
+                                dr["Image"] = fn;
+                            } //End If
+                            } else if (sTmp.Contains("78-") && sTmp.Substring(0, 2).Equals("78") || MstrPartNum.Contains("A10") || MstrPartNum.Contains("A12"))
+                {
+                                if (sTmpImg.Equals(String.Empty))
+                                {
+                                    if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                                    {
+                                        fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                        }
+                        else
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\" + sTmp + ".jpg";
+                                    } //End If
+                                    if (!File.Exists(fn))
+                        {
+                            fn = fn.Replace(".jpg", ".gif");
+                                        if (!File.Exists(fn))
+                            {
+                                fn = fn.Replace(".gif", "-1.jpg");
+                            if (!File.Exists(fn))
+                                {
+                                    fn = fn.Replace("-1.jpg", "A.jpg");
+                                if (!File.Exists(fn))
+                                    {
+                                        LogEvent("Get Image fn " + fn + " Not Found");
+                                } //End If
+                                            } //End If
+                                        } //End If
+                                    } //End If
+                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
+                        dr["Image"] = fn;
+                                } //End If
+                }
+                else
+                {
+                    if (sTmpImg.Equals(String.Empty))
+                    {
+                        if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                        }
+                        else
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\" + sTmp + ".jpg";
+                        } //End If
+                        if (!File.Exists(fn))
+                        {
+                            fn = fn.Replace(".jpg", ".gif");
+                            if (!File.Exists(fn))
+                            {
+                                fn = fn.Replace(".gif", "-1.jpg");
+                                if (!File.Exists(fn))
+                                {
+                                    fn = fn.Replace("-1.jpg", "A.jpg");
+                                    if (!File.Exists(fn))
+                                    {
+                                        LogEvent("Get Image fn " + fn + " Not Found");
+                                    } //End If
+                                } //End If
+                            } //End If
+                        } //End If
+                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
+                        dr["Image"] = fn;
+                    } //End If
+                } //End If
+            } //End If
+            return true;
+        } //End Sub
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -470,6 +660,7 @@ namespace BCPartImages
             Int32 MaxRow = 0;
             String value = "";
             String fn = "";
+            String upperItemArray = "";
 
             try
             {
@@ -489,7 +680,7 @@ namespace BCPartImages
                     for (row = 0; row < MaxRow; row++)
                     {
                         dr = m_dsWork.Tables[0].Rows[row];
-                        String upperItemArray = Convert.ToString(dr.ItemArray[0]).ToUpper();
+                        upperItemArray = Convert.ToString(dr.ItemArray[0]).ToUpper();
                         if (upperTextBox.Equals(upperItemArray))
                         {
                             value = Convert.ToString(dr["Path"]);
@@ -576,11 +767,12 @@ namespace BCPartImages
                         for (row = 0; row < MaxRow; row++)
                         {
                             dr = m_dsWork.Tables[0].Rows[row];
-                            upperItemArray = Convert.ToString(dr.ItemArray[1]).ToUpper();
+                            upperItemArray = Convert.ToString(dr.ItemArray[27]).ToUpper();
+                            LogEvent("txbxPart Number KeyUp upperItemArray " + upperItemArray);
                             if (upperTextBox.Equals(upperItemArray))
                             {
                                 value = Convert.ToString(dr["Path"]);
-                                txbxPartNumber.Text = Convert.ToString(dr.ItemArray[0]);
+                                txbxPartNumber.Text = Convert.ToString(dr.ItemArray[27]);
                                 break;
                             }
                             LogEvent("txbxPartNumber KeyUp fn " + fn);
@@ -599,27 +791,27 @@ namespace BCPartImages
                     }
                     fn = imagePath.Text;
                     LogEvent("txbxPart Number KeyUp fn " + fn);
-                    if (File.Exists(fn))
+                    //if (File.Exists(fn))
+                    //{
+                    if (fn.Contains("pdf"))
                     {
-                        if (fn.Contains("pdf"))
-                        {
-                            pictureBox.ImageLocation = "\\\\OmegaFS2\\NAVGIF\\NoImage.png";
-                        }
-                        else
-                        {
-                            pictureBox.ImageLocation = imagePath.Text;
-                        }
-                        String path = imagePath.Text;
-
-                        if (File.Exists(path))
-                        {
-                            System.Diagnostics.Process.Start(path);
-                        }
+                        pictureBox.ImageLocation = "\\\\OmegaFS2\\NAVGIF\\NoImage.png";
                     }
                     else
                     {
-                        pictureBox.ImageLocation = "\\\\OmegaFS2\\NAVGIF\\NoImage.png";
-                    } //End If
+                        pictureBox.ImageLocation = imagePath.Text;
+                    }
+                    String path = imagePath.Text;
+
+                    if (File.Exists(path))
+                    {
+                        System.Diagnostics.Process.Start(path);
+                    }
+                    //}
+                    //else
+                    //{
+                    //    pictureBox.ImageLocation = "\\\\OmegaFS2\\NAVGIF\\NoImage.png";
+                    //} //End If
                 }
                 catch (Exception ex)
                 {
