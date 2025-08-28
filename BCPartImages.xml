@@ -3,7 +3,7 @@
 <OMEGADB>
 
 <!-- OMEGA Label Print Application Initializations -->
-    <AppVersion>2.0.0.0</AppVersion>
+    <AppVersion>2.0.0.1</AppVersion>
 
 <!-- Database credentials, either will allow connection to both -->
     <SQLConnNAV>Data Source=OMEGASQL1;Initial Catalog=Omega-NAV-2009-A;User Id=BCPartImages;Password=puL8J1rRcmMQudwZ;Integrated Security=False;</SQLConnNAV>

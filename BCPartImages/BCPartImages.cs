@@ -26,7 +26,7 @@ namespace BCPartImages
 #if DEBUG
         string xmlfn = "C:\\Apps\\PartImages\\BCPartImages.xml";
 #else
-        string xmlfn = ".\BCPartImages.xml";
+        string xmlfn = ".\\BCPartImages.xml";
 #endif
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
         DataSet m_dsWork = new DataSet();
@@ -39,6 +39,9 @@ namespace BCPartImages
 
         //Omega_Images.XML file initializations
         String AppVersion = "1.0.0.0";
+        //2.0.0.0 BC-4456-Setup Part Images Application on PCs in Kitting
+        //2.0.0.1 BC-5072-Updates BC Image Migration Paths to AWS S3Buckets
+        //2.0.0.2
 
         String Customer = "";
         string BaseSQL = String.Empty; //SQL command that gets data to fill the m_dsWork DataSet
@@ -395,10 +398,10 @@ namespace BCPartImages
 
             //Replace Part Number in Template SQL with the one the operator entered
             String sTemp = BaseSQL;
-            Int32 num = sTemp.IndexOf("@PickTicket = '");
+            Int32 num = sTemp.IndexOf("@ImageName = '");
             if (num > 0)
             { //found String
-                String strTmp = "@PickTicket = '";
+                String strTmp = "@ImageName = '";
                 num += strTmp.Length;
                 Int32 m = sTemp.IndexOf("'", num);
                 sTemp = sTemp.Substring(num, m - num);
