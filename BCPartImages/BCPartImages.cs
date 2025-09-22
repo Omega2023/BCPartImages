@@ -526,99 +526,102 @@ namespace BCPartImages
                         LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
                         dr["Image"] = fn;
                     } //End If
-                    } else if (sTmp.Contains("RDK") || MstrPartNum.Contains("K14"))
+                }
+                else if (sTmp.Contains("RDK") || MstrPartNum.Contains("K14"))
                 {
-                        if (sTmpImg.Equals(String.Empty))
+                    if (sTmpImg.Equals(String.Empty))
+                    {
+                        if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
                         {
-                            if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
-                            {
-                                fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                            fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
                         }
                         else
                         {
                             fn = "\\\\OmegaFS2\\NAVGIF\\RDK\\" + sTmp + ".jpg";
-                            } //End If
-                            if (!File.Exists(fn))
+                        } //End If
+                        if (!File.Exists(fn))
                         {
                             fn = fn.Replace(".jpg", ".gif");
-                                if (!File.Exists(fn))
+                            if (!File.Exists(fn))
                             {
                                 fn = fn.Replace(".gif", "-1.jpg");
-                            if (!File.Exists(fn))
+                                if (!File.Exists(fn))
                                 {
                                     fn = fn.Replace("-1.jpg", "A.jpg");
-                                if (!File.Exists(fn))
-                                    {
-                                        LogEvent("Get Image fn " + fn + " Not Found");
-                                } //End If
+                                    if (!File.Exists(fn))
+                                        {
+                                            LogEvent("Get Image fn " + fn + " Not Found");
                                     } //End If
                                 } //End If
                             } //End If
+                        } //End If
                         LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
                         dr["Image"] = fn;
-                        } //End If
-                        } else if (sTmp.Contains("BK") && sTmp.Substring(0, 2).Equals("BK") || MstrPartNum.Contains("H12"))
+                    } //End If
+                }
+                else if (sTmp.Contains("BK") && sTmp.Substring(0, 2).Equals("BK") || MstrPartNum.Contains("H12"))
                 {
-                            if (sTmpImg.Equals(String.Empty))
-                            {
-                                if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
-                                {
-                                    fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                    if (sTmpImg.Equals(String.Empty))
+                    {
+                        if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
                         }
                         else
                         {
                             fn = "\\\\OmegaFS2\\NAVGIF\\BMK\\" + sTmp + ".jpg";
-                                } //End If
-                                if (!File.Exists(fn))
+                        } //End If
+                        if (!File.Exists(fn))
                         {
-                                    fn = fn.Replace(".jpg", ".gif");
-                                    if (!File.Exists(fn))
+                            fn = fn.Replace(".jpg", ".gif");
+                            if (!File.Exists(fn))
                             {
                                 fn = fn.Replace(".gif", "-1.jpg");
-                            if (!File.Exists(fn))
+                                if (!File.Exists(fn))
                                 {
                                     fn = fn.Replace("-1.jpg", "A.jpg");
-                                if (!File.Exists(fn))
+                                    if (!File.Exists(fn))
                                     {
                                         LogEvent("Get Image fn " + fn + " Not Found");
-                                } //End If
-                                        } //End If
                                     } //End If
                                 } //End If
-                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
-                                dr["Image"] = fn;
                             } //End If
-                            } else if (sTmp.Contains("78-") && sTmp.Substring(0, 2).Equals("78") || MstrPartNum.Contains("A10") || MstrPartNum.Contains("A12"))
+                        } //End If
+                        LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
+                        dr["Image"] = fn;
+                    } //End If
+                }
+                else if (sTmp.Contains("78-") && sTmp.Substring(0, 2).Equals("78") || MstrPartNum.Contains("A10") || MstrPartNum.Contains("A12"))
                 {
-                                if (sTmpImg.Equals(String.Empty))
-                                {
-                                    if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
-                                    {
-                                        fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
+                    if (sTmpImg.Equals(String.Empty))
+                    {
+                        if ((Customer.ToUpper()).Contains("DTNA") || (Customer.ToUpper()).Contains("ALLIAN"))
+                        {
+                            fn = "\\\\OmegaFS2\\NAVGIF\\DTNA\\" + sTmp + ".jpg";
                         }
                         else
                         {
                             fn = "\\\\OmegaFS2\\NAVGIF\\" + sTmp + ".jpg";
-                                    } //End If
-                                    if (!File.Exists(fn))
+                        } //End If
+                        if (!File.Exists(fn))
                         {
                             fn = fn.Replace(".jpg", ".gif");
-                                        if (!File.Exists(fn))
+                            if (!File.Exists(fn))
                             {
                                 fn = fn.Replace(".gif", "-1.jpg");
-                            if (!File.Exists(fn))
+                                if (!File.Exists(fn))
                                 {
                                     fn = fn.Replace("-1.jpg", "A.jpg");
-                                if (!File.Exists(fn))
+                                    if (!File.Exists(fn))
                                     {
                                         LogEvent("Get Image fn " + fn + " Not Found");
-                                } //End If
-                                            } //End If
-                                        } //End If
                                     } //End If
+                                } //End If
+                            } //End If
+                        } //End If
                         LogEvent("Get Image sTmp=" + sTmp + " sTmpImg=" + sTmpImg + " fn=" + fn);
                         dr["Image"] = fn;
-                                } //End If
+                    } //End If
                 }
                 else
                 {
