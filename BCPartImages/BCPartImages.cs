@@ -41,7 +41,8 @@ namespace BCPartImages
         String AppVersion = "1.0.0.0";
         //2.0.0.0 BC-4456-Setup Part Images Application on PCs in Kitting
         //2.0.0.1 BC-5072-Updates BC Image Migration Paths to AWS S3Buckets
-        //2.0.0.2
+        //2.0.0.2 BC-5096-New Image Folder Paths to AWS S3Buckets
+        //2.0.0.3
 
         String Customer = "";
         string BaseSQL = String.Empty; //SQL command that gets data to fill the m_dsWork DataSet
