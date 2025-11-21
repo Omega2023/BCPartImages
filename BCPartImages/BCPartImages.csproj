@@ -102,16 +102,16 @@
       <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Magick.NET-Q16-AnyCPU, Version=14.8.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
-      <HintPath>..\packages\Magick.NET-Q16-AnyCPU.14.8.1\lib\netstandard20\Magick.NET-Q16-AnyCPU.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-AnyCPU.14.8.1\lib\netstandard20\Magick.NET-Q16-AnyCPU.dll</HintPath>
     </Reference>
     <Reference Include="Magick.NET-Q16-HDRI-AnyCPU, Version=14.8.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
-      <HintPath>..\packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\lib\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\lib\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.dll</HintPath>
     </Reference>
     <Reference Include="Magick.NET-Q8-AnyCPU, Version=14.8.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
-      <HintPath>..\packages\Magick.NET-Q8-AnyCPU.14.8.1\lib\netstandard20\Magick.NET-Q8-AnyCPU.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q8-AnyCPU.14.8.1\lib\netstandard20\Magick.NET-Q8-AnyCPU.dll</HintPath>
     </Reference>
     <Reference Include="Magick.NET.Core, Version=14.8.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
-      <HintPath>..\packages\Magick.NET.Core.14.8.1\lib\netstandard20\Magick.NET.Core.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET.Core.14.8.1\lib\netstandard20\Magick.NET.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
@@ -313,15 +313,15 @@
     <Error Condition="!Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
     <Error Condition="!Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-    <Error Condition="!Exists('..\packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets'))" />
-    <Error Condition="!Exists('..\packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets'))" />
-    <Error Condition="!Exists('..\packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets'))" />
+    <Error Condition="!Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets'))" />
+    <Error Condition="!Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets'))" />
+    <Error Condition="!Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets'))" />
   </Target>
   <Import Project="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <Import Project="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Import Project="..\packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets" Condition="Exists('..\packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" />
-  <Import Project="..\packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets" Condition="Exists('..\packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets')" />
-  <Import Project="..\packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets" Condition="Exists('..\packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets')" />
+  <Import Project="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets" Condition="Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" />
+  <Import Project="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets" Condition="Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q8-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q8-AnyCPU.targets')" />
+  <Import Project="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets" Condition="Exists('C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Packages\Magick.NET-Q16-HDRI-AnyCPU.14.8.1\build\netstandard20\Magick.NET-Q16-HDRI-AnyCPU.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
