@@ -51,6 +51,7 @@ namespace BCPartImages
         string daConnNAV = String.Empty;
         string daConnSOLO = String.Empty;
         string daConnBC = String.Empty;
+        String daDBServer = "";
         String SQLTimeout = "";
         String ImagesDir = "";
 
@@ -344,6 +345,12 @@ namespace BCPartImages
                     elemList = m_xmld.GetElementsByTagName(Parsing);
                     daConnBC = elemList[0].InnerText;
                     LogEvent("SQLConnBC: " + daConnBC);
+
+                    Parsing = "DBServer";
+                    LogEvent(Parsing);
+                    elemList = m_xmld.GetElementsByTagName(Parsing);
+                    daDBServer = elemList[0].InnerText;
+                    LogEvent("DBServer: " + daDBServer);
 
                     Parsing = "SQLTimeout";
                     LogEvent(Parsing);
@@ -748,7 +755,7 @@ namespace BCPartImages
 
         private void txbxPartNumber_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue.Equals(13))
+            if (e.KeyValue.Equals(13)) //<Enter>
             {
                 bool status = false;
                 Int32 MaxRow = 0;

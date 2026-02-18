@@ -10,6 +10,11 @@
     <SQLConnSOLO>Data Source=OMEGASQL1;Initial Catalog=solochain;Integrated Security=True</SQLConnSOLO>
     <SQLConnBC>Data Source=OMEGABCDATA;Initial Catalog=Omega_BC18_PROD;User Id=USERID;Password=PASSWORD;Integrated Security=False;Connection Timeout=60;</SQLConnBC>
 
+<!-- DB Server -->
+    <DBServer>OETSQL01.corp.omega-holdings.com</DBServer>
+<!-- <DBServer>OETTST01.corp.omega-holdings.com</DBServer> -->
+<!-- <DBServer>CRP-BC-TST-ALL.corp.omega-holdings.com</DBServer> -->
+
 <!-- SQL Time Out Setting (seconds) -->
     <SQLTimeout>120</SQLTimeout>
 
